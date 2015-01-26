@@ -1,0 +1,34 @@
+ Auchenai Soulpriest
+Cabal Shadow Priest
+Dark Cultist
+Lightspawn
+Lightwell
+Northshire Cleric
+Prophet Velen
+Shadowbomber
+Shadowboxer
+Shrinkmeister
+Temple Enforcer
+Upgraded Repair Bot
+Vol'jin 
+Circle of Healing
+Divine Spirit
+Holy Fire
+Holy Nova
+Holy Smite
+Inner Fire
+Lightbomb
+Light of the Naaru
+Mass Dispel
+Mind Blast
+Mind Control
+Mind Vision
+Mindgames
+Power Word: Shield
+Shadow Madness
+Shadow Word: Death
+Shadow Word: Pain
+Shadowform
+Silence
+Thoughtsteal
+Velen's Chosen 

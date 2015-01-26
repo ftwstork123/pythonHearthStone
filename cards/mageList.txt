@@ -1,0 +1,34 @@
+Archmage Antonidas
+Ethereal Arcanist
+Flame Leviathan
+Goblin Blastmage
+Kirin Tor Mage
+Mana Wyrm
+Snowchugger
+Soot Spewer
+Sorcerer's Apprentice
+Water Elemental
+Wee Spellstopper 
+Arcane Explosion
+Arcane Intellect
+Arcane Missiles
+Blizzard
+Cone of Cold
+Counterspell
+Duplicate
+Echo of Medivh
+Fireball
+Flamecannon
+Flamestrike
+Frost Nova
+Frostbolt
+Ice Barrier
+Ice Block
+Ice Lance
+Mirror Entity
+Mirror Image
+Polymorph
+Pyroblast
+Spellbender
+Unstable Portal
+Vaporize 
