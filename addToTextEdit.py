@@ -39,6 +39,7 @@ class Form(QDialog):
 			self.grid.addWidget(self.removeButtons[self.nCards],self.nCards+1,3)
 			self.removeButtons[self.nCards].clicked.connect(lambda: self.removeCard(nCard))
 			self.nCards = self.nCards+1
+			
 			self.setLayout(self.grid)
 	def removeCard(self,cardName): 
 		if int(self.counters[cardName].text()) > 0 : 
