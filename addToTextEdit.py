@@ -50,5 +50,6 @@ class Form(QDialog):
 		return fileList 
 app = QApplication(sys.argv)
 form = Form()
-form.show()
+form.show() 
+
 app.exec_()
