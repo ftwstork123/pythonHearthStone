@@ -37,14 +37,14 @@ class Form(QDialog):
 			self.grid.addWidget(self.labels[self.nCards],self.nCards+1,1)
 			self.grid.addWidget(self.counters[self.nCards],self.nCards+1,2)
 			self.grid.addWidget(self.removeButtons[self.nCards],self.nCards+1,3)
-			self.removeButtons[self.nCards].clicked.connect(lambda: self.removeCard(nCard))
-			
+			self.removeButtons[self.nCards].clicked.connect(lambda: self.removeCard(nCard))	
 			self.nCards = self.nCards+1
 			self.setLayout(self.grid)
 	def removeCard(self,cardName): 
 		if int(self.counters[cardName].text()) > 0 : 
 			self.counters[cardName].setText(str(int(self.counters[cardName].text()) - 1 ))
-		print 'troll'
+		else : 
+			print 'troll'
 	def getWarriorCards(self):
 		with open('cards/neutralList.txt') as f:
 			content = f.readlines()
