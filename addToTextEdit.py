@@ -43,6 +43,7 @@ class Form(QDialog):
 	def removeCard(self,cardName): 
 		if int(self.counters[cardName].text()) > 0 : 
 			self.counters[cardName].setText(str(int(self.counters[cardName].text()) - 1 ))
+		print 'troll'
 	def getWarriorCards(self):
 		with open('cards/neutralList.txt') as f:
 			content = f.readlines()
@@ -51,5 +52,4 @@ class Form(QDialog):
 app = QApplication(sys.argv)
 form = Form()
 form.show() 
-
 app.exec_()
