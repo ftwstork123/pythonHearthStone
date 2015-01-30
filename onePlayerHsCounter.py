@@ -123,6 +123,8 @@ class ShowDecks(QDialog) :
             val = str(int(nCard)/self.totCards)
             self.qLabelPercent[i].setText(val) 
         print self.totCards
+
+
 app = QApplication(sys.argv)
 form = Form()
 form.show()

@@ -2,10 +2,12 @@ import sys
 from PySide.QtCore import *
 from PySide.QtGui import *
 
-class Form(QDialog):
-	def __init__(self, parent=None):
-		super(Form, self).__init__(parent)
-		warriorCards = self.getWarriorCards()
+class OpponentDeck(QDialog):
+	def __init__(self,deck, parent=None):
+		super(OpponentDeck, self).__init__(parent)
+		self.deckList = {'druid':'druidList.txt', 'huntard':'huntardList.txt', 'mage' :'mageList.txt', 'paladin':'paladinList.txt', 'priest':'priestList.txt', 'rogue':'rogueList.txt', 'shaman':'shamanList.txt',  'warlock':'warlock.txt', 'warrior' :'warriorList.txt'}
+		print self.deckList[deck]
+		warriorCards = self.getCards(self.deckList[deck])
 		self.nCards = 0
 		self.lineEdit = QLineEdit(self)
 		self.completer = QCompleter(warriorCards, self)
@@ -34,6 +36,7 @@ class Form(QDialog):
 			self.labels.append(QLabel(cardName))
 			self.counters.append(QLabel('1'))
 			self.removeButtons.append(QPushButton('remove'))
+			self.removeButtons[-1].setCheckable(True)
 			self.grid.addWidget(self.labels[self.nCards],self.nCards+1,1)
 			self.grid.addWidget(self.counters[self.nCards],self.nCards+1,2)
 			self.grid.addWidget(self.removeButtons[self.nCards],self.nCards+1,3)
@@ -43,14 +46,17 @@ class Form(QDialog):
 	def removeCard(self,cardName): 
 		if int(self.counters[cardName].text()) > 0 : 
 			self.counters[cardName].setText(str(int(self.counters[cardName].text()) - 1 ))
-		else : 
-			print 'troll'
-	def getWarriorCards(self):
+			self.removeButtons[cardName].setDefault(False)
+	def getCards(self,deck):
 		with open('cards/neutralList.txt') as f:
 			content = f.readlines()
-		fileList = [i.replace('\n','').replace('GVGIcon','').replace('CurseofNaxxramasLogo','') for i in content]
-		return fileList 
+		neutralCards = [i.replace('\n','').replace('GVGIcon','').replace('CurseofNaxxramasLogo','') for i in content]
+		with open('cards/'+ deck) as f:
+			content = f.readlines()
+		classDependentCards = [i.replace('\n','').replace('GVGIcon','').replace('CurseofNaxxramasLogo','') for i in content]
+		neutralCards = neutralCards + classDependentCards
+		return neutralCards 
 app = QApplication(sys.argv)
-form = Form()
-form.show() 
+OpponentDeck = OpponentDeck('rogue')
+OpponentDeck.show() 
 app.exec_()
